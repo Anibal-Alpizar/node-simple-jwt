@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "node-simple-jwt",
-    "dateExported": "2024-01-04T05:16:31.555Z",
+    "dateExported": "2024-01-04T06:07:00.971Z",
     "version": "1.1",
     "folders": [
         {
@@ -22,8 +22,13 @@
             "method": "GET",
             "sortNum": 10000,
             "created": "2024-01-04T02:25:32.519Z",
-            "modified": "2024-01-04T02:25:45.147Z",
-            "headers": [],
+            "modified": "2024-01-04T06:04:58.811Z",
+            "headers": [
+                {
+                    "name": "x-access-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OTYzYmMwYmMwOTY4YmZkMDc2NWQ0NiIsImlhdCI6MTcwNDM0ODI2NCwiZXhwIjoxNzA0NDM0NjY0fQ.3AJFamxdh6vGdtIIsWsrwb6Pv5T4umgjsWYwj3G7HIU"
+                }
+            ],
             "params": [],
             "tests": []
         },
@@ -55,9 +60,14 @@
             "method": "POST",
             "sortNum": 30000,
             "created": "2024-01-04T02:26:28.224Z",
-            "modified": "2024-01-04T02:26:40.644Z",
+            "modified": "2024-01-04T06:04:24.594Z",
             "headers": [],
             "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\": \"anibal.alpizar14@gmail.com\",\n  \"password\": \"123\"\n}",
+                "form": []
+            },
             "tests": []
         }
     ]
