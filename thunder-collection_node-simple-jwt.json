@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "node-simple-jwt",
-    "dateExported": "2024-01-04T02:26:55.901Z",
+    "dateExported": "2024-01-04T05:16:31.555Z",
     "version": "1.1",
     "folders": [
         {
@@ -36,9 +36,14 @@
             "method": "POST",
             "sortNum": 20000,
             "created": "2024-01-04T02:26:07.611Z",
-            "modified": "2024-01-04T02:26:21.478Z",
+            "modified": "2024-01-04T04:36:02.949Z",
             "headers": [],
             "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"userName\": \"anibal\",\n  \"email\": \"anibal.alpizar14@gmail.com\",\n  \"password\": \"123\"\n}",
+                "form": []
+            },
             "tests": []
         },
         {
