@@ -58,17 +58,17 @@ router.post('/signin', async (req, res, next) => {
 
 router.get('/me', verifyToken, async (req, res, next) => {
 
-        const userFound = await User.findById(req.userId, // req.userId is the id that we get from the verifyToken middleware
-            {
-                password: 0 // don't show the password field in the response
-            })
+    const userFound = await User.findById(req.userId, // req.userId is the id that we get from the verifyToken middleware
+        {
+            password: 0 // don't show the password field in the response
+        })
 
-        if (!userFound) {
-            return res.status(404).json({
-                message: 'No user found'
-            })
-        }
-        res.json(userFound)
-    })
+    if (!userFound) {
+        return res.status(404).json({
+            message: 'No user found'
+        })
+    }
+    res.json(userFound)
+})
 
 export default router
