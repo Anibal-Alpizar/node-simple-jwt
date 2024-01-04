@@ -10,7 +10,12 @@ const userSchema = new Schema({
 userSchema.statics.encryptPassword = async (password) => {
     const salt = await bcrypt.genSalt(10) // 10 is the number of rounds
     return bcrypt.hash(password, salt) // hash the password with the salt
-   
 }
+
+userSchema.statics.comparePassword = async (password, receivedPassword) => {
+    return bcrypt.compare(password, receivedPassword)
+}
+
+
 
 export default model('User', userSchema)
