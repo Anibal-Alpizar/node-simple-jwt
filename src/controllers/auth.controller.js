@@ -40,8 +40,22 @@ router.post('/signup', async (req, res, next) => {
     res.status(200).json({ auth: true, token })
 })
 
-router.post('/signin', (req, res, next) => {
-    res.json({ message: 'signin' })
+router.post('/signin', async (req, res, next) => {
+    // if the user exists, return a token
+    // if the user doesn't exist, return a message
+    const { email, password } = req.body
+    const user = await User.findOne({ email })
+    if (!user) return res.status(404).send('The user doesnt exists')
+
+    const validPassword = await User.comparePassword(password, user.password) // emailFound.password is the hashed password
+    if (!validPassword) return res.status(401).json({ auth: false, token: null })
+
+    const token = jwt.sign({ id: user._id }, config.secret, {
+        expiresIn: 60 * 60 * 24 // 24 hours
+    })
+
+    res.json({ auth: true, token })
+
 })
 
 router.get('/me', async (req, res, next) => {
