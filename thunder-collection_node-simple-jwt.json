@@ -1,7 +1,7 @@
 {
     "client": "Thunder Client",
     "collectionName": "node-simple-jwt",
-    "dateExported": "2024-01-04T06:14:17.880Z",
+    "dateExported": "2024-01-04T06:16:25.715Z",
     "version": "1.1",
     "folders": [
         {
@@ -22,11 +22,31 @@
             "method": "GET",
             "sortNum": 10000,
             "created": "2024-01-04T02:25:32.519Z",
-            "modified": "2024-01-04T06:14:10.498Z",
+            "modified": "2024-01-04T06:15:54.239Z",
             "headers": [
                 {
                     "name": "x-access-token",
                     "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OTYzYmMwYmMwOTY4YmZkMDc2NWQ0NiIsImlhdCI6MTcwNDM0ODI2NCwiZXhwIjoxNzA0NDM0NjY0fQ.3AJFamxdh6vGdtIIsWsrwb6Pv5T4umgjsWYwj3G7HIU"
+                }
+            ],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "d5ce76e2-ef02-4fda-9f80-031795b91fce",
+            "colId": "1c6afa6d-cb94-41c4-a17c-1760a01ef1e7",
+            "containerId": "935fca6a-1404-4602-91d2-5a131413e861",
+            "name": "dashboard",
+            "url": "http://localhost:3000/dashboard",
+            "method": "GET",
+            "sortNum": 15000,
+            "created": "2024-01-04T06:15:59.992Z",
+            "modified": "2024-01-04T06:16:13.092Z",
+            "headers": [
+                {
+                    "name": "x-access-token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1OTYzYmMwYmMwOTY4YmZkMDc2NWQ0NiIsImlhdCI6MTcwNDM0ODI2NCwiZXhwIjoxNzA0NDM0NjY0fQ.3AJFamxdh6vGdtIIsWsrwb6Pv5T4umgjsWYwj3G7HIU",
+                    "isDisabled": true
                 }
             ],
             "params": [],
