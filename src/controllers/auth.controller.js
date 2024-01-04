@@ -36,7 +36,6 @@ router.post('/signup', async (req, res, next) => {
     const token = jwt.sign({ id: userSaved._id }, config.secret, {
         expiresIn: 60 * 60 * 24 // 24 hours
     })
-
     res.status(200).json({ auth: true, token })
 })
 
@@ -53,9 +52,7 @@ router.post('/signin', async (req, res, next) => {
     const token = jwt.sign({ id: user._id }, config.secret, {
         expiresIn: 60 * 60 * 24 // 24 hours
     })
-
     res.json({ auth: true, token })
-
 })
 
 router.get('/me', async (req, res, next) => {
@@ -80,10 +77,7 @@ router.get('/me', async (req, res, next) => {
             message: 'No user found'
         })
     }
-
     res.json(userFound)
-
 })
-
 
 export default router
