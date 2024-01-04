@@ -31,7 +31,8 @@ router.post('/signup', async (req, res, next) => {
     const userSaved = await user.save()
     console.log(user)
 
-    // idUser or Payload
+    // create a token
+    // paylod = user id
     const token = jwt.sign({ id: userSaved._id }, config.secret, {
         expiresIn: 60 * 60 * 24 // 24 hours
     })
@@ -43,8 +44,32 @@ router.post('/signin', (req, res, next) => {
     res.json({ message: 'signin' })
 })
 
-router.get('/me', (req, res, next) => {
-    res.json({ message: 'me' })
+router.get('/me', async (req, res, next) => {
+    const token = req.headers['x-access-token']
+    if (!token) {
+        return res.status(401).json({
+            auth: false,
+            message: 'No token provided'
+        })
+    }
+    // verify token
+    const decoded = jwt.verify(token, config.secret);
+    console.log(decoded) // { id: '5f9b7b7b7b7b7b7b7b7b7b7b' } the user id
+
+    const userFound = await User.findById(decoded.id,
+        {
+            password: 0 // don't show the password field in the response
+
+        })
+
+    if (!userFound) {
+        return res.status(404).json({
+            message: 'No user found'
+        })
+    }
+
+    res.json(userFound)
+
 })
 
 
