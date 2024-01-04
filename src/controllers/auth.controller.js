@@ -59,7 +59,6 @@ router.get('/me', async (req, res, next) => {
     const userFound = await User.findById(decoded.id,
         {
             password: 0 // don't show the password field in the response
-
         })
 
     if (!userFound) {
