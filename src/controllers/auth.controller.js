@@ -71,4 +71,10 @@ router.get('/me', verifyToken, async (req, res, next) => {
     res.json(userFound)
 })
 
+router.get('/dashboard', verifyToken, async (req, res, next) => {
+    res.json({
+        message: 'Welcome to the dashboard'
+    })
+})
+
 export default router
