@@ -1,4 +1,4 @@
-import mongoose from 'mongoose'
+import { connect } from 'mongoose'
 
-mongoose.connect('mongodb://localhost/simplejwt')
+connect('mongodb://localhost/simplejwt')
     .then(db => console.log('DB is connected'))
