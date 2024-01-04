@@ -11,11 +11,25 @@
 */
 
 import { Router } from 'express'
+import User from '../models/User.js'
 
 const router = Router()
 
-router.post('/signup', (req, res, next) => {
-    res.json({ message: 'signup' })
+router.post('/signup', async (req, res, next) => {
+
+    const { userName, email, password } = req.body
+
+    const user = new User({
+        userName,
+        email,
+        password
+    })
+
+    user.password = await User.encryptPassword(user.password)
+    const userSaved = await user.save()
+    console.log(user)
+
+    res.status(200).json(userSaved)
 })
 
 router.post('/signin', (req, res, next) => {
